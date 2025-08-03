@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools
+	{
+		maven 'MAVEN_HOME'
+	}
     stages {
         stage('Checkout') {
             steps {
@@ -23,6 +27,7 @@ pipeline {
             steps {
                 // Deploy your artifact, if necessary
                 // Example: sh 'mvn deploy'
+                echo 'Pipeline deploy successfully!'
             }
         }
     }
